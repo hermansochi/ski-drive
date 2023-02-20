@@ -366,9 +366,9 @@
               <img src="#" alt="Пользователь" class="comment__img">
             </div>
             <div class="comment__wrap">
-              <h3 class="comment__user">Gansta</h3>
+              <h3 class="comment__user">Герман А.</h3>
               <p class="comment__text">
-                Чуваки я только сюда, доски просто огонь!!!
+                я только сюда, доски просто огонь!!!
               </p>
             </div>
           </div>
@@ -398,12 +398,13 @@
             </address>
             <a class="btn" href="#">Построить маршрут</a>
             <div class="contact__phone">
-              <a class="contact__link link" href="tel:+79882391100"><img src="./img/phone.png" alt="Телефон">+7(988) 239
-                11 00</a>
-              <a class="contact__link link" href="https://api.whatsapp.com/send?phone=79882391100" target="_blank"><img
-                  src="./img/whatsapp.png" alt="whatsapp"> WhatsApp</a>
-              <a class="contact__link link" href="https://t.me/" target="_blank"><img src="./img/telegram.png"
-                  alt="telegram"> Telegram</a>
+                <a class="contact__link link" href="tel:+79882391100">
+                <img src="{{ Vite::asset('resources/img/phone.png') }}" alt="Телефон">
+                +7 (988) 239 11 00</a>
+              <a class="contact__link link" href="https://api.whatsapp.com/send?phone=79882391100" target="_blank">
+                <img src="{{ Vite::asset('resources/img/whatsapp.png') }}" alt="Whatsapp"> WhatsApp</a>
+              <a class="contact__link link" href="https://t.me/" target="_blank">
+                <img src="{{ Vite::asset('resources/img/telegram.png') }}" alt="Telegram"> Telegram</a>
             </div>
             <h3 class="contact__subtitle subtitle">Время работы:</h3>
             <p>Пн-Вс: 8:00 - 23:00</p>

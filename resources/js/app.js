@@ -1,4 +1,5 @@
-import './bootstrap';
+//import './bootstrap';
+import IMask from 'imask';
 import.meta.glob([
     '../img/**',
     '../fonts/**',
@@ -13,6 +14,11 @@ const links = menu.querySelectorAll('.nav__link');
 
 const burger = document?.querySelector('[data-burger]');
 const nav = document?.querySelector('[data-nav]');
+
+var phoneMask = IMask(
+    document.getElementById('phone1'), {
+      mask: '+{7}(000)000-00-00'
+    });
 
 burger?.addEventListener('click', () => {
   document.body.classList.toggle('stop-scroll')
