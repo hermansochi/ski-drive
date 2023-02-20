@@ -117,6 +117,11 @@ return [
         'emergency' => [
             'path' => storage_path('logs/laravel.log'),
         ],
-    ],
 
+        'telegram' => [
+            'driver' => 'custom',
+            'via'    => RLaurindo\TelegramLogger\TelegramLogger::class,
+            'level'  => 'debug',
+        ]
+    ],
 ];

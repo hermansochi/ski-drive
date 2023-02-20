@@ -1,15 +1,15 @@
 {
-    "name": "laravel/laravel",
+    "name": "hermansochi/ski-drive.ru",
     "type": "project",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "description": "ski-drive.ru site.",
     "license": "MIT",
     "require": {
         "php": "^8.0.2",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^3.0",
-        "laravel/tinker": "^2.7"
+        "laravel/tinker": "^2.7",
+        "rafaellaurindo/laravel-telegram-logging": "^1.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
