@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+use App\Models\Order;
+use App\Http\Resources\OrderResource;
 
-class OdderController extends Controller
+class OrderController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +37,20 @@ class OdderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        //dd($request->userAgent());
+        $order = Order::create([
+            'ip' => $request->ip(),
+            'user_agent' => $request->userAgent(),
+            'phone' => $request->phone,
+        ]);
+
+        $message = 'ID: ' . $order->id . ' IP: ' . $request->ip();
+        $message .= ' phone: ' . $request->phone;
+        $message .= ' created at: ' . $order->created_at;
+        Log::channel('telegram')->info($message);
+
+        return new OrderResource($order);
     }
 
     /**

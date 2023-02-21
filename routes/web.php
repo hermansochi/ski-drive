@@ -1,8 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Log;
-use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,9 +13,6 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/', function (Request $request) {
-    $message = 'ID: 10000 IP: ' . $request->ip();
-    $message .= ' phone: +79182001600';
-    Log::channel('telegram')->info($message);
+Route::get('/', function () {
     return view('welcome');
 });

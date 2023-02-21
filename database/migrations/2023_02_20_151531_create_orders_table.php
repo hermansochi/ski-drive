@@ -15,7 +15,8 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id()->from(10000);
-            $table->ipAddress('visitor');
+            $table->ipAddress('ip');
+            $table->string('user_agent');
             $table->string('phone', 20);
             $table->timestamps();
         });
