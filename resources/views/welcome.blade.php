@@ -58,13 +58,13 @@
                             class="title--blue">горнолыжных</span> курортах Сочи</h1>
                     <p class="hero__descr">Аренда лыж, сноубордов, защитной амуниции и полной экипировки для вашего активного
                         отдыха</p>
-                    <form class="hero__form">
+                    <div class="hero__form">
                         <div class="form__box">
-                            <input class="form__input" type="tel" name="phone" id="phone1" required="required">
+                            <input class="form__input" name="phone" id="phone1" required="required">
                             <label class="form__label" for="phone1">Ваш телефон </label>
                         </div>
-                        <button class="form__btn btn" type="submit" data-modal="up">заказать звонок</button>
-                    </form>
+                        <button class="form__btn btn" data-modal="up">заказать звонок</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -211,13 +211,13 @@
     <section class="form">
         <div class="container">
             <h2 class="form__title title">Оставить заявку</h2>
-            <form class="form__form">
+            <div class="form__form">
                 <div class="form__box">
-                    <input class="form__input" type="tel" name="phone" id="phone2" required="required">
+                    <input class="form__input" name="phone" id="phone2" required="required">
                     <label class="form__label" for="phone2">Телефон</label>
                 </div>
-                <button class="form__btn btn" type="submit" data-modal="center">заказать звонок</button>
-            </form>
+                <button class="form__btn btn" data-modal="center">заказать звонок</button>
+            </div>
         </div>
     </section>
     <section class="adv" id="adv">
@@ -379,10 +379,10 @@
             <h2 class="form__title title">Оставить заявку</h2>
             <div class="form__form">
                 <div class="form__box">
-                    <input class="form__input" type="tel" name="phone" id="phone3" required="required">
+                    <input class="form__input" name="phone" id="phone3" required="required">
                     <label class="form__label" for="phone3">Телефон</label>
                 </div>
-                <button class="form__btn btn" type="submit" data-modal="bottom">заказать звонок</button>
+                <button class="form__btn btn" data-modal="bottom">заказать звонок</button>
             </div>
         </div>
     </section>

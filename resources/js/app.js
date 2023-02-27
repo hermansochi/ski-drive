@@ -38,8 +38,9 @@ const postCall = (pos, phone) => {
             const orderID = document?.querySelector('#order_id');
             const orderPhone = document?.querySelector('#order_phone');
             // enter you logic when the fetch is successful
-            orderID.innerText = result.id;
-            orderPhone.innerText = result.phone;
+            //console.log(result);
+            orderID.innerText = ' ' + result.data.id;
+            orderPhone.innerText = ' ' + result.data.phone;
         }).catch (function (error) {
                 console.log('Request failed', error);
         });
@@ -57,27 +58,29 @@ const nav = document?.querySelector('[data-nav]');
 
 const modals = document?.querySelectorAll('[data-modal]');
 
-modals.forEach(btn => {
-    console.log(btn.dataset.modal);
-
-    btn.addEventListener('click',  () => {
-        if (btn.dataset.modal === 'up' && phoneMask1.unmaskedValue.length === 11) {
-            postCall(btn.dataset.modal, phoneMask1.unmaskedValue);
-        } else if (btn.dataset.modal === 'up' && phoneMask2.unmaskedValue.length === 11) {
-            postCall(btn.dataset.modal, phoneMask2.unmaskedValue);
-        } else if (btn.dataset.modal === 'bottom' && phoneMask3.unmaskedValue.length === 11) {
-            postCall(btn.dataset.modal, phoneMask3.unmaskedValue);
+modals.forEach(trigger => {
+    trigger.addEventListener('click',  function(event) {
+        event.preventDefault();
+        if (trigger.dataset.modal === 'up' && phoneMask1.unmaskedValue.length === 11) {
+            postCall(trigger.dataset.modal, phoneMask1.unmaskedValue);
+        } else if (trigger.dataset.modal === 'center' && phoneMask2.unmaskedValue.length === 11) {
+            postCall(trigger.dataset.modal, phoneMask2.unmaskedValue);
+        } else if (trigger.dataset.modal === 'bottom' && phoneMask3.unmaskedValue.length === 11) {
+            postCall(trigger.dataset.modal, phoneMask3.unmaskedValue);
         }
-        document.body.classList.toggle('stop-scroll')
+        //document.body.classList.toggle('stop-scroll')
         const modal = document.querySelector('.modal');
         modal.classList.add('modal--open');
-        const close = modal.querySelector('.modal__close');
-        close.addEventListener('click', () => {
-            modal.classList.remove('modal--open');
-            document.body.classList.remove('stop-scroll')
-        })
-    })
-})
+        const closes = document.querySelectorAll('.modal__close');
+        closes.forEach(close => {
+            close.addEventListener('click', function(event) {
+                event.preventDefault();
+                modal.classList.remove('modal-open');
+                //document.body.classList.remove('stop-scroll')
+            });
+        });
+    });
+});
 
 burger?.addEventListener('click', () => {
     document.body.classList.toggle('stop-scroll')
