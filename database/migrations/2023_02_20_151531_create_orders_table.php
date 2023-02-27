@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id()->from(10000);
             $table->ipAddress('ip');
             $table->string('user_agent');
+            $table->string('position',10);
             $table->string('phone', 20);
             $table->timestamps();
         });

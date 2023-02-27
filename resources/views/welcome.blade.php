@@ -63,7 +63,7 @@
                             <input class="form__input" type="tel" name="phone" id="phone1" required="required">
                             <label class="form__label" for="phone1">Ваш телефон </label>
                         </div>
-                        <button class="form__btn btn" type="submit" data-modal="modal-one">заказать звонок</button>
+                        <button class="form__btn btn" type="submit" data-modal="up">заказать звонок</button>
                     </form>
                 </div>
             </div>
@@ -213,10 +213,10 @@
             <h2 class="form__title title">Оставить заявку</h2>
             <form class="form__form">
                 <div class="form__box">
-                    <input class="form__input" type="tel" name="phone" id="phone" required="required">
-                    <label class="form__label" for="phone">Телефон</label>
+                    <input class="form__input" type="tel" name="phone" id="phone2" required="required">
+                    <label class="form__label" for="phone2">Телефон</label>
                 </div>
-                <button class="form__btn btn" type="submit" data-modal="modal-one">заказать звонок</button>
+                <button class="form__btn btn" type="submit" data-modal="center">заказать звонок</button>
             </form>
         </div>
     </section>
@@ -377,13 +377,13 @@
     <section class="form">
         <div class="container">
             <h2 class="form__title title">Оставить заявку</h2>
-            <form class="form__form">
+            <div class="form__form">
                 <div class="form__box">
-                    <input class="form__input" type="tel" name="phone" id="phone2" required="required">
-                    <label class="form__label" for="phone2">Телефон</label>
+                    <input class="form__input" type="tel" name="phone" id="phone3" required="required">
+                    <label class="form__label" for="phone3">Телефон</label>
                 </div>
-                <button class="form__btn btn" type="submit" data-modal="modal-one">заказать звонок</button>
-            </form>
+                <button class="form__btn btn" type="submit" data-modal="bottom">заказать звонок</button>
+            </div>
         </div>
     </section>
     <section class="contact" id="contact">
@@ -429,13 +429,12 @@
 <div class="modal" id="modal">
     <div class="modal__bg modal__exit"></div>
     <div class="modal__container">
-        <p class="modal__num title">Заказ №<span>10001</span></p>
-        <p class="modal__phone">Ваш номер телефона <span>+7(918)000-000-00</span></p>
+        <p class="modal__num title">Заказ №<span id="order_id">10000</span></p>
+        <p class="modal__phone">Ваш номер телефона <span id="order_phone">+7(000)000-000-00</span></p>
         <button class="modal__close modal__exit">&times;</button>
     </div>
 </div>
-<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=b16d2be2-a9a0-4c24-b977-b135f92dcfe8"></script>
-<script src="js/script.js"></script>
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=b16d2be2-a9a0-4c24-b977-b135f92dcfe8"></script>
 </body>
 
 </html>

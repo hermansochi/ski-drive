@@ -19,6 +19,7 @@ class OrderResource extends JsonResource
             'id' => $this->id,
             'ip' => $this->up,
             'user_agent' => $this->user_agent,
+            'position' => $this->position,
             'phone' => $this->phone,
             'created_at' => (string) $this->created_at,
             'updated_at' => (string) $this->updated_at,

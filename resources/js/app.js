@@ -5,10 +5,46 @@ import.meta.glob([
     '../fonts/**',
   ]);
 
-var phoneMask = IMask(
+const phoneMask1 = IMask(
     document.getElementById('phone1'), {
         mask: '+{7}(000)000-00-00'
     });
+
+const phoneMask2 = IMask(
+    document.getElementById('phone2'), {
+        mask: '+{7}(000)000-00-00'
+    });
+
+const phoneMask3 = IMask(
+    document.getElementById('phone3'), {
+        mask: '+{7}(000)000-00-00'
+    });
+
+const postCall = (pos, phone) => {
+        fetch('/api/order', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+                // your expected POST request payload goes here
+                position: pos,
+                phone: phone
+            })
+        }).then(function (response) {
+            return response.json();
+        }).then(function (result) {
+                alert(result);
+            const orderID = document?.querySelector('#order_id');
+            const orderPhone = document?.querySelector('#order_phone');
+            // enter you logic when the fetch is successful
+            orderID.innerText = result.id;
+            orderPhone.innerText = result.phone;
+        }).catch (function (error) {
+                console.log('Request failed', error);
+        });
+}
 
 const coordinates = [43.687711089988206, 40.25821072732546];
 let map;
@@ -23,7 +59,16 @@ const nav = document?.querySelector('[data-nav]');
 const modals = document?.querySelectorAll('[data-modal]');
 
 modals.forEach(btn => {
-    btn.addEventListener('click', () => {
+    console.log(btn.dataset.modal);
+
+    btn.addEventListener('click',  () => {
+        if (btn.dataset.modal === 'up' && phoneMask1.unmaskedValue.length === 11) {
+            postCall(btn.dataset.modal, phoneMask1.unmaskedValue);
+        } else if (btn.dataset.modal === 'up' && phoneMask2.unmaskedValue.length === 11) {
+            postCall(btn.dataset.modal, phoneMask2.unmaskedValue);
+        } else if (btn.dataset.modal === 'bottom' && phoneMask3.unmaskedValue.length === 11) {
+            postCall(btn.dataset.modal, phoneMask3.unmaskedValue);
+        }
         document.body.classList.toggle('stop-scroll')
         const modal = document.querySelector('.modal');
         modal.classList.add('modal--open');

@@ -38,16 +38,19 @@ class OrderController extends Controller
     public function store(Request $request)
     {
 
-        //dd($request->userAgent());
+        //dd($request->input('position'));
         $order = Order::create([
             'ip' => $request->ip(),
             'user_agent' => $request->userAgent(),
-            'phone' => $request->phone,
+            'position' => $request->input('position'),
+            'phone' => $request->input('phone'),
         ]);
 
         $message = 'ID: ' . $order->id . ' IP: ' . $request->ip();
-        $message .= ' phone: ' . $request->phone;
-        $message .= ' created at: ' . $order->created_at;
+        //$message = ' IP: ' . $request->ip();
+        $message .= ' position: ' . $request->input('position');
+        $message .= ' phone: ' . $request->input('phone');
+        //$message .= ' created at: ' . $order->created_at;
         Log::channel('telegram')->info($message);
 
         return new OrderResource($order);
