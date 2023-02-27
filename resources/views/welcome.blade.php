@@ -365,9 +365,9 @@
                         <img src="#" alt="Пользователь" class="comment__img">
                     </div>
                     <div class="comment__wrap">
-                        <h3 class="comment__user">Gansta</h3>
+                        <h3 class="comment__user">Герман А.</h3>
                         <p class="comment__text">
-                            Чуваки я только сюда, доски просто огонь!!!
+                            Я только сюда, доски просто огонь!!!
                         </p>
                     </div>
                 </div>
@@ -434,7 +434,7 @@
         <button class="modal__close modal__exit">&times;</button>
     </div>
 </div>
-<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=<ваш API-ключ>"></script>
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=b16d2be2-a9a0-4c24-b977-b135f92dcfe8"></script>
 <script src="js/script.js"></script>
 </body>
 
