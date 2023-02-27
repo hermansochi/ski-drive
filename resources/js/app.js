@@ -35,7 +35,6 @@ const postCall = (pos, phone) => {
         }).then(function (response) {
             return response.json();
         }).then(function (result) {
-                alert(result);
             const orderID = document?.querySelector('#order_id');
             const orderPhone = document?.querySelector('#order_phone');
             // enter you logic when the fetch is successful
