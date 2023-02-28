@@ -46,10 +46,20 @@ class OrderController extends Controller
             'phone' => $request->input('phone'),
         ]);
 
+
+        $from = "+11234567890";
+        $from = $request->input('phone');
+        $to = sprintf("+7(%s)%s-%s-%s",
+            substr($from, 1, 3),
+            substr($from, 4, 3),
+            substr($from, 7, 2),
+            substr($from, 9, 2)
+        );
+
         $message = 'ID: ' . $order->id . ' IP: ' . $request->ip();
         //$message = ' IP: ' . $request->ip();
         $message .= ' position: ' . $request->input('position');
-        $message .= ' phone: ' . $request->input('phone');
+        $message .= ' phone: ' . $to;
         //$message .= ' created at: ' . $order->created_at;
         Log::channel('telegram')->info($message);
 

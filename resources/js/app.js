@@ -2,7 +2,7 @@
 import IMask from 'imask';
 import.meta.glob([
     '../img/**',
-    '../fonts/**',
+    //'../fonts/**',
   ]);
 
 const phoneMask1 = IMask(
@@ -58,25 +58,30 @@ const nav = document?.querySelector('[data-nav]');
 
 const modals = document?.querySelectorAll('[data-modal]');
 
-modals.forEach(trigger => {
+modals.forEach(function (trigger) {
     trigger.addEventListener('click',  function(event) {
         event.preventDefault();
+        const modal = document.getElementById('modal');
+
         if (trigger.dataset.modal === 'up' && phoneMask1.unmaskedValue.length === 11) {
             postCall(trigger.dataset.modal, phoneMask1.unmaskedValue);
+            modal.classList.add('modal__open');
         } else if (trigger.dataset.modal === 'center' && phoneMask2.unmaskedValue.length === 11) {
             postCall(trigger.dataset.modal, phoneMask2.unmaskedValue);
+            modal.classList.add('modal__open');
         } else if (trigger.dataset.modal === 'bottom' && phoneMask3.unmaskedValue.length === 11) {
             postCall(trigger.dataset.modal, phoneMask3.unmaskedValue);
+            modal.classList.add('modal__open');
         }
-        //document.body.classList.toggle('stop-scroll')
-        const modal = document.querySelector('.modal');
-        modal.classList.add('modal--open');
-        const closes = document.querySelectorAll('.modal__close');
+        document.body.classList.toggle('stop-scroll')
+
+        const closes = modal.querySelectorAll('.modal__exit');
+        console.log('closes- ' + closes);
         closes.forEach(close => {
             close.addEventListener('click', function(event) {
                 event.preventDefault();
-                modal.classList.remove('modal-open');
-                //document.body.classList.remove('stop-scroll')
+                modal.classList.remove('modal__open');
+                document.body.classList.remove('stop-scroll')
             });
         });
     });
@@ -166,13 +171,13 @@ function mapInit() {
         // controls: ['routePanelControl'],
     });
 
-    map.controls.remove('geolocationControl');
+    //map.controls.remove('geolocationControl');
     map.controls.remove('searchControl');
-    map.controls.remove('trafficControl');
-    map.controls.remove('typeSelector');
+    //map.controls.remove('trafficControl');
+    //map.controls.remove('typeSelector');
     map.controls.remove('fullscreenControl');
-    map.controls.remove('zoomControl');
-    map.controls.remove('rulerControl');
+    //map.controls.remove('zoomControl');
+    //map.controls.remove('rulerControl');
 
     let placemark = new ymaps.Placemark(coordinates, {
         balloonContentHeader: 'SkiDrive',

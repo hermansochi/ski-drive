@@ -9,6 +9,24 @@
         <link type="image/png" rel="icon" href="{{ Vite::asset('resources/img/64.png') }}">
         <meta name="description" content="Прокат лыж, сноубордов, полной экипировки на горнолыжных курортах Сочи. У нас можно взять в прокат лыжи, сноуборд">
         <title>Прокат горнолыжного снаряжения Красная поляна</title>
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript" >
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(92623638, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true,
+            webvisor:true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/92623638" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
     </head>
 
 <body>
@@ -318,51 +336,48 @@
     </section>
     <section class="comment" id="comment">
         <div class="container">
-            <h2 class="comment__title title">Отзывы наших клиентов</h2>
+            <h2 class="comment__title title">
+                <a class="h2link" href="https://yandex.ru/maps/org/drive/13187836374/reviews/?ll=40.258242%2C43.687644&z=16">Отзывы</a> наших клиентов
+            </h2>
             <div class="comment__items row">
                 <div class="comment__item col">
                     <div class="comment__ava">
-                        <img src="#" alt="Пользователь" class="comment__img">
+                        <img src="{{ Vite::asset('resources/img/ivanu.jpg') }}" alt="Иван Юлин" class="comment__img">
                     </div>
                     <div class="comment__wrap">
-                        <h3 class="comment__user">Иван Сидоров</h3>
+                        <h3 class="comment__user">Иван Юлин</h3>
                         <p class="comment__text">
-                            Ребята это просто бомба, а не компания! Столько внимая к каждой мелочи я просто обалдел + мне как
-                            новичку
-                            все объяснили и рассказали и еще посоветовали куда надо первым делом идти)))
+                            Отличный прокатный центр, хорошее обслуживание и вежливый персонал. Оборудование исправное, надеждное.
+                            Все было по высшему разряду!</p>
+                    </div>
+                </div>
+                <div class="comment__item col">
+                    <div class="comment__ava">
+                        <img src="{{ Vite::asset('resources/img/divan.jpeg') }}" alt="Диванный критик" class="comment__img">
+                    </div>
+                    <div class="comment__wrap">
+                        <h3 class="comment__user">Диванный критик</h3>
+                        <p class="comment__text">
+                            Отличный прокат! Цена /качество все отлично! Консультант помог подобрать нужную экипировку
+                            всей семье! Всегда берём только там. Рекомендую!
                         </p>
                     </div>
                 </div>
                 <div class="comment__item col">
                     <div class="comment__ava">
-                        <img src="#" alt="Пользователь" class="comment__img">
+                        <img src="{{ Vite::asset('resources/img/andreyt.jpeg') }}" alt="Andrew Tarlikov" class="comment__img">
                     </div>
                     <div class="comment__wrap">
-                        <h3 class="comment__user">Василий Теркин</h3>
+                        <h3 class="comment__user">Andrew Tarlikov</h3>
                         <p class="comment__text">
-                            Всем рекомендую от души, я хоть и не новичек и пользовался много какими прокатами но этот меня зацепил
-                            больше всех я и не думал даже, что у нас бывает такой сервис.
+                            Большой выбор позволяет мне как новичку катания подобрать более подходящее под мой уровень.
+                            Не далеко от подъемника Горки Город.
                         </p>
                     </div>
                 </div>
                 <div class="comment__item col">
                     <div class="comment__ava">
-                        <img src="#" alt="Пользователь" class="comment__img">
-                    </div>
-                    <div class="comment__wrap">
-                        <h3 class="comment__user">Принцесса Несмеяна</h3>
-                        <p class="comment__text">
-                            Хочу оставить положительный отзыв о компании хотя раньше не когда не оставляла отзывы. Мы сыном очень
-                            были
-                            рады оказаться в гостях у этих людей такие доброжелательные и чаем напоили и подарок сделали, только у
-                            них
-                            теперь будем обслуживаться и в следующий раз друзей приведем
-                        </p>
-                    </div>
-                </div>
-                <div class="comment__item col">
-                    <div class="comment__ava">
-                        <img src="#" alt="Пользователь" class="comment__img">
+                        <img src="{{ Vite::asset('resources/img/default.png') }}" alt="Герман А." class="comment__img">
                     </div>
                     <div class="comment__wrap">
                         <h3 class="comment__user">Герман А.</h3>
@@ -395,7 +410,7 @@
                     <address>
                         <p>Берёзовая ул., 70, село Эсто-Садок</p>
                     </address>
-                    <a class="btn" href="#">Построить маршрут</a>
+                    <a class="btn" href="https://yandex.ru/maps/?rtext=~43.687711,40.258210" target="_blank">Построить маршрут</a>
                     <div class="contact__phone">
                         <a class="contact__link link" href="tel:+79882391100">
                             <img src="{{ Vite::asset('resources/img/phone.png') }}" alt="Телефон">
@@ -429,8 +444,8 @@
 <div class="modal" id="modal">
     <div class="modal__bg modal__exit"></div>
     <div class="modal__container">
-        <p class="modal__num title">Заказ №<span id="order_id">10000</span></p>
-        <p class="modal__phone">Ваш номер телефона <span id="order_phone">+7(000)000-000-00</span></p>
+        <p class="modal__num title">Заказ № <span id="order_id">10000</span></p>
+        <p class="modal__phone">Ваш номер телефона <span id="order_phone">+7(000)000-00-00</span></p>
         <button class="modal__close modal__exit">&times;</button>
     </div>
 </div>
