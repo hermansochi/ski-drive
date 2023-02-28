@@ -400,7 +400,7 @@
                         <a class="contact__link link" href="https://api.whatsapp.com/send?phone=79882391100" target="_blank">
                             <img src="{{ Vite::asset('resources/img/whatsapp.png') }}" alt="Whatsapp">
                             WhatsApp</a>
-                        <a class="contact__link link" href="https://t.me/" target="_blank">
+                        <a class="contact__link link" href="https://t.me/prokatdrive" target="_blank">
                             <img src="{{ Vite::asset('resources/img/telegram.png') }}" alt="Telegram">
                             Telegram</a>
                     </div>
