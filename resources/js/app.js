@@ -60,23 +60,26 @@ const modals = document?.querySelectorAll('[data-modal]');
 
 modals.forEach(function (trigger) {
     trigger.addEventListener('click',  function(event) {
-        event.preventDefault();
+
         const modal = document.getElementById('modal');
 
         if (trigger.dataset.modal === 'up' && phoneMask1.unmaskedValue.length === 11) {
             postCall(trigger.dataset.modal, phoneMask1.unmaskedValue);
+            event.preventDefault();
             modal.classList.add('modal__open');
         } else if (trigger.dataset.modal === 'center' && phoneMask2.unmaskedValue.length === 11) {
             postCall(trigger.dataset.modal, phoneMask2.unmaskedValue);
+            event.preventDefault();
             modal.classList.add('modal__open');
         } else if (trigger.dataset.modal === 'bottom' && phoneMask3.unmaskedValue.length === 11) {
             postCall(trigger.dataset.modal, phoneMask3.unmaskedValue);
+            event.preventDefault();
             modal.classList.add('modal__open');
         }
         document.body.classList.toggle('stop-scroll')
 
         const closes = modal.querySelectorAll('.modal__exit');
-        console.log('closes- ' + closes);
+        //console.log('closes- ' + closes);
         closes.forEach(close => {
             close.addEventListener('click', function(event) {
                 event.preventDefault();
