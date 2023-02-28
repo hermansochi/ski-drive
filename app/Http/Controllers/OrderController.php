@@ -49,7 +49,7 @@ class OrderController extends Controller
 
         $from = "+11234567890";
         $from = $request->input('phone');
-        $to = sprintf("+7(%s)%s-%s-%s",
+        $to = sprintf("+7%s%s%s%s",
             substr($from, 1, 3),
             substr($from, 4, 3),
             substr($from, 7, 2),
